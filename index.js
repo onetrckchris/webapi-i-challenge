@@ -1,9 +1,11 @@
 const express = require('express');
 const users = require('./data/db');
+const cors = require('cors');
 
 const server = express();
 
 server.use(express.json());
+server.use(cors());
 
 server.get('/api/users', (req, res) => {
     users.find()
